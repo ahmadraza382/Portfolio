@@ -39,7 +39,7 @@ export default function Services() {
       <div
         ref={sectionRef}
         id="services"
-        className={`2xl:w-[96rem] 2xl:m-auto px-4 transition-all duration-700 ${
+        className={`2xl:w-[96rem] 2xl:m-auto px-1 text-justify transition-all duration-700 ${
           inView ? 'animate-fade-in-up opacity-100' : 'opacity-0 translate-y-10'
         }`}
       >
@@ -60,15 +60,15 @@ export default function Services() {
               </div>
 
               <h1>{card.heading}</h1>
-              <p className="text-slate-200 text-center">{card.detail}</p>
+              <p className="text-slate-200 text-sm sm:text-base">{card.detail}</p>
 
               {more1 && card.more1 && (
-                <p className="text-slate-300 text-center mt-2 transition-all duration-500 opacity-100 translate-y-0">
+                <p className="text-slate-300 text-sm sm:text-base mt-2 transition-all duration-500 opacity-100 translate-y-0">
                   <br /> {card.more1}
                 </p>
               )}
               {more2 && card.more2 && (
-                <p className="text-slate-300 text-center mt-2 transition-all duration-500 opacity-100 translate-y-0">
+                <p className="text-slate-300 text-sm sm:text-base mt-2 transition-all duration-500 opacity-100 translate-y-0">
                   <br /> {card.more2}
                 </p>
               )}
@@ -80,7 +80,7 @@ export default function Services() {
                 }}
                 className="p-2 px-4 mt-7 hover:text-white shadow-blue shadow-effect bg-blue text-black rounded-full transition-transform duration-200 ease-out hover:scale-105 active:scale-95"
               >
-                Read More
+                {card.id === 1 ? (more1 ? 'Show Less' : 'Read More') : (more2 ? 'Show Less' : 'Read More')}
               </button>
             </div>
           ))}
